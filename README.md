@@ -44,4 +44,4 @@ The AlexNet architecture haS been trained with the Oxflower-17 dataset for diffe
 
 ## VGGNet-16
 
-![VGGNet-16 architecture](/figures/vggnet_architecture.png?raw=true "VGGNet-16 Architecture")
+![VGGNet-16 architecture](/figures/vggnet_architecture.PNG?raw=true "VGGNet-16 Architecture")
