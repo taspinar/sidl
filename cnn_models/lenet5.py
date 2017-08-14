@@ -35,7 +35,7 @@ def model_lenet5(data, variables):
     layer1_actv = tf.sigmoid(layer1_conv + variables['b1'])
     layer1_pool = tf.nn.avg_pool(layer1_actv, [1, 2, 2, 1], [1, 2, 2, 1], padding='SAME')
 
-    layer2_conv = tf.nn.conv2d(layer1_pool, variables['w2'], [1, 1, 1, 1], padding='SAME')
+    layer2_conv = tf.nn.conv2d(layer1_pool, variables['w2'], [1, 1, 1, 1], padding='VALID')
     layer2_actv = tf.sigmoid(layer2_conv + variables['b2'])
     layer2_pool = tf.nn.avg_pool(layer2_actv, [1, 2, 2, 1], [1, 2, 2, 1], padding='SAME')
 
