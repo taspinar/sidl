@@ -1,3 +1,4 @@
+import tensorflow as tf
 import numpy as np
 import pickle
 import json
@@ -19,12 +20,13 @@ def randomize(dataset, labels):
     shuffled_labels = labels[permutation]
     return shuffled_dataset, shuffled_labels
 
-def one_hot_encode(np_array):
-    return (np.arange(10) == np_array[:,None]).astype(np.float32)
+def one_hot_encode(np_array, num_labels):
+    return (np.arange(num_labels) == np_array[:,None]).astype(np.float32)
 
 def reformat_data(dataset, labels, image_width, image_height, image_depth):
     np_dataset_ = np.array([np.array(image_data).reshape(image_width, image_height, image_depth) for image_data in dataset])
-    np_labels_ = one_hot_encode(np.array(labels, dtype=np.float32))
+    num_labels = len(np.unique(labels))
+    np_labels_ = one_hot_encode(np.array(labels, dtype=np.float32), num_labels)
     np_dataset, np_labels = randomize(np_dataset_, np_labels_)
     return np_dataset, np_labels
 
