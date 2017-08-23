@@ -1,6 +1,6 @@
 import tensorflow as tf
 from cnn_models import lenet5, lenet5_like, alexnet, vggnet16
-
+from utils import *
 
 #Variables used in the constructing and running the graph
 num_steps = 10001
