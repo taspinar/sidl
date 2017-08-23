@@ -1,3 +1,6 @@
+import tensorflow as tf
+from utils import *
+
 LENET5_LIKE_BATCH_SIZE = 32
 LENET5_LIKE_FILTER_SIZE = 5
 LENET5_LIKE_FILTER_DEPTH = 16

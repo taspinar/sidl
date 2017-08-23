@@ -1,3 +1,6 @@
+import tensorflow as tf
+from utils import *
+
 LENET5_BATCH_SIZE = 32
 LENET5_FILTER_SIZE = 5
 LENET5_FILTER_DEPTH_1 = 6
@@ -16,7 +19,7 @@ def variables_lenet5(filter_size = LENET5_FILTER_SIZE, filter_depth1 = LENET5_FI
     w2 = tf.Variable(tf.truncated_normal([filter_size, filter_size, filter_depth1, filter_depth2], stddev=0.1))
     b2 = tf.Variable(tf.constant(1.0, shape=[filter_depth2]))
 
-    w3 = tf.Variable(tf.truncated_normal([(image_width // 4)*(image_height // 4)*filter_depth2, num_hidden1], stddev=0.1))
+    w3 = tf.Variable(tf.truncated_normal([(image_width // 5)*(image_height // 5)*filter_depth2, num_hidden1], stddev=0.1))
     b3 = tf.Variable(tf.constant(1.0, shape = [num_hidden1]))
 
     w4 = tf.Variable(tf.truncated_normal([num_hidden1, num_hidden2], stddev=0.1))
