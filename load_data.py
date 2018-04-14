@@ -29,7 +29,7 @@ def unzip_download(download_response):
 
 def mnist(input_folder, image_width, image_height, image_depth):
     if not os.path.exists(input_folder):
-        os.mkdir(input_folder)
+        os.makedirs(input_folder)
     
     for filename in MNIST_FILES:
         unzipped_filename = filename.split('.')[0]
